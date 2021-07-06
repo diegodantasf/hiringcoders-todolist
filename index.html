@@ -43,16 +43,50 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="new-bullet-list table-container">
+                <button add-bullet-list></button>
+            </div>
         </div>
+
 
         <template id="bullet-list-item">
             <li class="bullet-list-item">
                 <div> 
-                    <div contentEditable="true" style="width: 95%;" spellcheck="false"> </div>
+                    <div contentEditable="true" style="width: 95%;" spellcheck="false"> Placeholder </div>
                     priority: <input priority type="number" value="0" style="width: 15%;"> 
                     <button delete>Delete</button>
                 </div>
             </li>
+        </template>
+
+        <template id="bullet-list">
+            <div class="bullet-list table-container">
+                <div class="bullet-list-menu">
+                    <div style="font-weight: 700; width: 80%; height: 70%; margin: 4px;" 
+                        contentEditable="true" spellcheck="false"> 
+                        Placeholder 
+                    </div>
+                    <div style="width: 20%;"> 
+                        <button delete style="width: 100%;"> Delete </button>
+                        <button sort style="width: 100%;"> Sort </button>
+                    </div>
+                </div>
+                <div class="bullet-list-content">
+                    <ul>
+                        <li class="bullet-list-item">
+                            <div> 
+                                <div contentEditable="true" style="width: 95%;" spellcheck="false"> Placeholder item </div>
+                                priority: <input priority type="number" value="0" style="width: 15%;"> 
+                                <button delete>Delete</button>
+                            </div>
+                        </li>
+                        <div class="bullet-list-new-item" style="margin: 8px 0px 0px 0px;">
+                            <input add-item type="image" src="images/plus_sign.svg">
+                        </div>
+                    </ul>
+                </div>
+            </div>
         </template>
 
         <script type="text/javascript" src="scripts/todo_table.js"></script>
