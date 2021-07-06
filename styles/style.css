@@ -36,3 +36,18 @@
     height: 90%;
     width: 100%;
 }
+
+.new-bullet-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-bullet-list [add-bullet-list] {
+    border-width: 2px;
+    background-image: url("../images/plus_sign.svg");
+    background-size: cover;
+    background-color:rgba(0, 0, 0, 0);
+    width: 42.5%;
+    height: 31%;
+}
