@@ -5,8 +5,14 @@ const contentDeleteButtons = document.querySelectorAll(".bullet-list-content [de
 const contentAddButtons = document.querySelectorAll(".bullet-list-content [add-item]")
 
 function createListItem() {
-   const template = document.querySelector("#bullet-list-item")
-   return template.content.cloneNode(true)
+    const template = document.querySelector("#bullet-list-item")
+    const item = template.content.cloneNode(true)
+
+    const contentDeleteButtons = item.querySelectorAll("[delete]")
+    for (let i = 0; i < contentDeleteButtons.length; ++i) {
+        contentDeleteButtons[i].addEventListener("click", contentDeleteClick)
+    }
+    return item
 }
 
 function contentDeleteClick() {
@@ -55,3 +61,40 @@ for (let i = 0; i < contentDeleteButtons.length; ++i) {
 for (let i = 0; i < contentAddButtons.length; ++i) {
     contentAddButtons[i].addEventListener("click", contentAddClick)
 }
+
+
+function createBulletList() {
+    const template = document.querySelector("#bullet-list")
+    const bulletList = template.content.cloneNode(true)
+
+    const menuDeleteButtons = bulletList.querySelectorAll(".bullet-list-menu [delete]")
+    const menuSortButtons = bulletList.querySelectorAll(".bullet-list-menu [sort]")
+
+    const contentDeleteButtons = bulletList.querySelectorAll(".bullet-list-content [delete]")
+    const contentAddButtons = bulletList.querySelectorAll(".bullet-list-content [add-item]")
+
+    for (let i = 0; i < menuDeleteButtons.length; ++i) {
+        menuDeleteButtons[i].addEventListener("click", menuDeleteClick)
+    }
+    
+    for (let i = 0; i < menuSortButtons.length; ++i) {
+        menuSortButtons[i].addEventListener("click", menuSortClick)
+    }
+    
+    for (let i = 0; i < contentDeleteButtons.length; ++i) {
+        contentDeleteButtons[i].addEventListener("click", contentDeleteClick)
+    }
+    
+    for (let i = 0; i < contentAddButtons.length; ++i) {
+        contentAddButtons[i].addEventListener("click", contentAddClick)
+    }
+
+    return bulletList
+}
+
+const newBulletListButton = document.querySelector(".todo-table .new-bullet-list [add-bullet-list]")
+
+newBulletListButton.addEventListener("click", function() {
+    const todoTable = this.closest('.todo-table')
+    todoTable.insertBefore(createBulletList(), todoTable.lastChild)
+})
