@@ -92,9 +92,11 @@ function createBulletList() {
     return bulletList
 }
 
-const newBulletListButton = document.querySelector(".todo-table .new-bullet-list [add-bullet-list]")
+const newBulletListButton = document.querySelector(".todo-panel .new-bullet-list [add-bullet-list]")
 
 newBulletListButton.addEventListener("click", function() {
-    const todoTable = this.closest('.todo-table')
-    todoTable.insertBefore(createBulletList(), todoTable.lastChild)
+    const todoPanel = this.closest('.todo-panel')
+    todoPanel.insertBefore(createBulletList(), todoPanel.lastChild)
 })
+
+

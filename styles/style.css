@@ -1,4 +1,4 @@
-.todo-table {
+.todo-panel {
     display: flex;
     flex-flow: row wrap;
     border-style: solid;
@@ -44,7 +44,7 @@
 }
 
 .new-bullet-list [add-bullet-list] {
-    border-width: 2px;
+    border-width: 0px;
     background-image: url("../images/plus_sign.svg");
     background-size: cover;
     background-color:rgba(0, 0, 0, 0);
