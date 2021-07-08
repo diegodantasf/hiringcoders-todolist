@@ -17,13 +17,13 @@
         </div>
 
         <div class="todo-panel">
-            <div class="new-bullet-list table-container">
-                <button add-bullet-list></button>
+            <div class="new-list list-container">
+                <button add-list></button>
             </div>
         </div>
 
-        <template id="bullet-list-item">
-            <li class="bullet-list-item">
+        <template id="list-item">
+            <li class="list-item">
                 <div> 
                     <div contentEditable="true" style="width: 95%;" spellcheck="false"> Placeholder </div>
                     priority: <input priority type="number" value="0" style="width: 15%;"> 
@@ -32,9 +32,9 @@
             </li>
         </template>
 
-        <template id="bullet-list">
-            <div class="bullet-list table-container">
-                <div class="bullet-list-menu">
+        <template id="list">
+            <div class="list list-container">
+                <div class="list-menu">
                     <div style="font-weight: 700; width: 80%; height: 70%; margin: 4px;" 
                         contentEditable="true" spellcheck="false"> 
                         Placeholder 
@@ -44,16 +44,16 @@
                         <button sort style="width: 100%;"> Sort </button>
                     </div>
                 </div>
-                <div class="bullet-list-content">
+                <div class="list-content">
                     <ul>
-                        <li class="bullet-list-item">
+                        <li class="list-item">
                             <div> 
                                 <div contentEditable="true" style="width: 95%;" spellcheck="false"> Placeholder item </div>
                                 priority: <input priority type="number" value="0" style="width: 15%;"> 
                                 <button delete>Delete</button>
                             </div>
                         </li>
-                        <div class="bullet-list-new-item" style="margin: 8px 0px 0px 0px;">
+                        <div class="list-new-item" style="margin: 8px 0px 0px 0px;">
                             <input add-item type="image" src="images/plus_sign.svg">
                         </div>
                     </ul>

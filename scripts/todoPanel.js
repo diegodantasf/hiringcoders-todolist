@@ -1,11 +1,11 @@
-const menuDeleteButtons = document.querySelectorAll(".bullet-list-menu [delete]")
-const menuSortButtons = document.querySelectorAll(".bullet-list-menu [sort]")
+const menuDeleteButtons = document.querySelectorAll(".list-menu [delete]")
+const menuSortButtons = document.querySelectorAll(".list-menu [sort]")
 
-const contentDeleteButtons = document.querySelectorAll(".bullet-list-content [delete]")
-const contentAddButtons = document.querySelectorAll(".bullet-list-content [add-item]")
+const contentDeleteButtons = document.querySelectorAll(".list-content [delete]")
+const contentAddButtons = document.querySelectorAll(".list-content [add-item]")
 
 function createListItem() {
-    const template = document.querySelector("#bullet-list-item")
+    const template = document.querySelector("#list-item")
     const item = template.content.cloneNode(true)
 
     const contentDeleteButtons = item.querySelectorAll("[delete]")
@@ -16,23 +16,23 @@ function createListItem() {
 }
 
 function contentDeleteClick() {
-    this.closest(".bullet-list-item").remove()
+    this.closest(".list-item").remove()
 }
 
 function contentAddClick() {
-    const list = this.closest(".bullet-list").querySelector(".bullet-list-content > ul")
+    const list = this.closest(".list").querySelector(".list-content > ul")
     let item = createListItem()
     list.prepend(item)
 }
 
 function menuDeleteClick() {
-    const bulletList = this.closest(".bullet-list")
+    const bulletList = this.closest(".list")
     bulletList.remove()
 }
 
 function menuSortClick() {
-    const list = this.closest(".bullet-list").querySelector(".bullet-list-content > ul")
-    const items = Array.from(list.querySelectorAll(".bullet-list-item"))
+    const list = this.closest(".list").querySelector(".list-content > ul")
+    const items = Array.from(list.querySelectorAll(".list-item"))
     
     items.sort(function(a, b) {
         return a.value < b.value;
@@ -64,14 +64,14 @@ for (let i = 0; i < contentAddButtons.length; ++i) {
 
 
 function createBulletList() {
-    const template = document.querySelector("#bullet-list")
+    const template = document.querySelector("#list")
     const bulletList = template.content.cloneNode(true)
 
-    const menuDeleteButtons = bulletList.querySelectorAll(".bullet-list-menu [delete]")
-    const menuSortButtons = bulletList.querySelectorAll(".bullet-list-menu [sort]")
+    const menuDeleteButtons = bulletList.querySelectorAll(".list-menu [delete]")
+    const menuSortButtons = bulletList.querySelectorAll(".list-menu [sort]")
 
-    const contentDeleteButtons = bulletList.querySelectorAll(".bullet-list-content [delete]")
-    const contentAddButtons = bulletList.querySelectorAll(".bullet-list-content [add-item]")
+    const contentDeleteButtons = bulletList.querySelectorAll(".list-content [delete]")
+    const contentAddButtons = bulletList.querySelectorAll(".list-content [add-item]")
 
     for (let i = 0; i < menuDeleteButtons.length; ++i) {
         menuDeleteButtons[i].addEventListener("click", menuDeleteClick)
@@ -92,7 +92,7 @@ function createBulletList() {
     return bulletList
 }
 
-const newBulletListButton = document.querySelector(".todo-panel .new-bullet-list [add-bullet-list]")
+const newBulletListButton = document.querySelector(".todo-panel .new-list [add-list]")
 
 newBulletListButton.addEventListener("click", function() {
     const todoPanel = this.closest('.todo-panel')

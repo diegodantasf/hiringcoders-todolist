@@ -6,7 +6,7 @@
     border-width: 2px;
 }
 
-.table-container {
+.list-container {
     margin: 10px;
     height: 400px;
     width: 300px;
@@ -15,20 +15,20 @@
     border-width: 2px;
 }
 
-.bullet-list {
+.list {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.bullet-list-menu {
+.list-menu {
     display: flex;
     height: 10%;
     width: 100%;
 }
 
-.bullet-list-content {
+.list-content {
     display: flex;
     border-style: solid;
     border-color: black;
@@ -37,13 +37,13 @@
     width: 100%;
 }
 
-.new-bullet-list {
+.new-list {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.new-bullet-list [add-bullet-list] {
+.new-list [add-list] {
     border-width: 0px;
     background-image: url("../images/plus_sign.svg");
     background-size: cover;
