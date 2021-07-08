@@ -34,10 +34,8 @@ function createListItem() {
     const template = document.querySelector("#list-item")
     const item = template.content.cloneNode(true)
 
-    const contentDeleteButtons = item.querySelectorAll("[delete]")
-    for (let i = 0; i < contentDeleteButtons.length; ++i) {
-        contentDeleteButtons[i].addEventListener("click", contentDeleteClick)
-    }
+    const DeleteButton = item.querySelector("[delete]")
+    DeleteButton.addEventListener("click", contentDeleteClick)
     return item
 }
 
