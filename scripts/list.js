@@ -65,4 +65,21 @@ export function createList() {
     return list
 }
 
+export function initList(list, data) {
+    const listName = list.querySelector(".list-menu [name]")
+    const listContent = list.querySelector(".list-content > ul")
 
+    listName.innerHTML = data['name']
+    data['items'].slice().reverse().forEach(item => {
+        const itemElement = createListItem()
+        const itemDescription = itemElement.querySelector("[description]")
+        const itemPriority = itemElement.querySelector("[priority]")
+
+        itemDescription.innerHTML = item['description']
+        itemPriority.value = item['priority']
+
+        listContent.prepend(itemElement)
+    })
+
+    return list
+}
