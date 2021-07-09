@@ -16,7 +16,7 @@
             <h1>TODO</h1>
         </div>
 
-        <div class="todo-panel">
+        <div id="todo-panel">
             <div class="new-list list-container">
                 <button add-list></button>
             </div>
@@ -25,7 +25,7 @@
         <template id="list-item">
             <li class="list-item">
                 <div> 
-                    <div contentEditable="true" style="width: 95%;" spellcheck="false"> Placeholder </div>
+                    <div description contentEditable="true" style="width: 95%;" spellcheck="false"> Placeholder </div>
                     priority: <input priority type="number" value="0" style="width: 15%;"> 
                     <button delete>Delete</button>
                 </div>
@@ -35,7 +35,7 @@
         <template id="list">
             <div class="list list-container">
                 <div class="list-menu">
-                    <div style="font-weight: 700; width: 80%; height: 70%; margin: 4px;" 
+                    <div name style="font-weight: 700; width: 80%; height: 70%; margin: 4px;" 
                         contentEditable="true" spellcheck="false"> 
                         Placeholder 
                     </div>
@@ -46,13 +46,6 @@
                 </div>
                 <div class="list-content">
                     <ul>
-                        <li class="list-item">
-                            <div> 
-                                <div contentEditable="true" style="width: 95%;" spellcheck="false"> Placeholder </div>
-                                priority: <input priority type="number" value="0" style="width: 15%;"> 
-                                <button delete>Delete</button>
-                            </div>
-                        </li>
                         <div class="list-new-item" style="margin: 8px 0px 0px 0px;">
                             <input add-item type="image" src="images/plus_sign.svg">
                         </div>
