@@ -1,4 +1,4 @@
-.todo-panel {
+#todo-panel {
     display: flex;
     flex-flow: row wrap;
     border-style: solid;
